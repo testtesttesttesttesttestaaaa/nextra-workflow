@@ -1,7 +1,11 @@
 {
-    "scripts": {
-    "dev": "next",
+    "scripts": {    "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && touch out/.nojekyll",
+    "lint": "next lint --max-warnings=0",
+    "type-check": "tsc",
+    "deploy": "gh-pages -d out -t true",
+    "prepare": "husky install"
   }
 }
