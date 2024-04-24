@@ -16,11 +16,11 @@ jobs:
           node-version: 20.x
       - name: Install dependencies
         run: |
-          yarn add next react react-dom nextra nextra-theme-docs
+          yarn install
           yarn export
       - name: Deploy
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           yarn deploy -- -u "github-actions-bot <support+actions@github.com>"
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
