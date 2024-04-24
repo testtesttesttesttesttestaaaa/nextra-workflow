@@ -1,5 +1,19 @@
-"scripts": {
-  "dev": "next",
-  "build": "next build",
-  "start": "next start"
-},
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build && touch out/.nojekyll",
+    "lint": "next lint --max-warnings=0",
+    "type-check": "tsc",
+    "deploy": "gh-pages -d out -t true",
+    "prepare": "husky install"}
+    ,
+    "dependencies": {
+        "next": "^14.2.2",
+        "nextra": "^2.13.4",
+        "nextra-theme-docs": "^2.13.4",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    }
+}
